@@ -1,5 +1,5 @@
 # ufwMon
-![Texto alternativo de la imagen](IMG/menu1.PNG)
+![Texto alternativo de la imagen](IMG/V1.2/menu2.PNG)
 
 ufwMon is a complementary tool for the ufw firewall aimed at simplifying its configuration and making it more accessible for users with basic knowledge of Linux.
 
@@ -30,3 +30,9 @@ This option is important because it allows users to verify whether the configura
 When selecting this option, a detailed summary of the current state of the firewall will be displayed, including information on active services and established restrictions. This provides users with a clear and accurate overview of the current state of the firewall, allowing them to take immediate action if something is not working as expected.
 
 In summary, these menus provide a user-friendly interface for configuring and managing the ufw firewall, allowing users to control traffic, set restrictions, and manage the firewall service with ease.
+
+# Update
+
+An additional section has been added that allows for the removal or withdrawal of configurations and restrictions. This section has been implemented with the intention of enabling the elimination of erroneous configurations or accidental actions that may have been made previously.
+
+With this improvement, it is now possible to undo any configuration or restriction that may be causing issues or unnecessary limitations in the system. This will make it easier to correct errors and optimize the system for better performance.
