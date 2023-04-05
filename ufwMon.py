@@ -35,7 +35,8 @@ def status_ufw():
 	print(colored("Verificando estado del servicio...", 'yellow'))
 	time.sleep(1)
 	os.system('clear')
-	print(colored("El sevicio se encuentra:", 'yellow'))	
+	print(colored("El sevicio se encuentra:", 'yellow'))
+	print(colored("Para salir:", 'yellow'), colored("ctrl + c", 'red'))
 	print(colored("------------------------------------------", "blue"))
 	os.system('systemctl status ufw')
 	print(colored("------------------------------------------", "blue"))
@@ -288,6 +289,42 @@ def permitir_ip():
 		time.sleep(2)
 		os.system('clear')
 		restricciones()
+		
+		
+# Borrar alguna configuración --------------------------------------
+def deleteConf():
+	print(colored("Ubique el servicio/restricción que desee quitar de la configuración, escriba el número del servicio que ya ubico y de enter.", 'yellow'))
+	time.sleep(1)
+	print(colored('''------------------------------------------''', 'blue'))
+	os.system('ufw status numbered')
+	print(colored('''------------------------------------------''', 'blue'))
+	numero = input(colored("Seleccione el servicio: ", 'green'))
+	print(colored('''------------------------------------------''', 'blue'))
+	print(colored("Seguro que desea quitar la configuración?: ", 'yellow'), "[yes or no]")
+	opcion = input(colored("Respuesta: ", 'green'))
+	os.system('clear')
+	
+	if opcion == "yes":
+		print(colored("Quitando configuración...", 'yellow'))
+		time.sleep(1)
+		os.system('clear')
+		os.system('ufw delete ' + numero)
+		time.sleep(2)
+		print(colored('''------------------------------------------''', 'blue'))
+		input("Presione enter para regresar: ")
+		menu()
+	elif opcion == "no":
+		print(colored("Cancelando acción...", 'yellow'))
+		time.sleep(1)
+		print(colored("Regresando al menu...", 'yellow'))
+		time.sleep(1)
+		os.system('clear')
+		menu()
+	else:
+		print(colored("Opción invalida, regresando al menu...", 'red'))
+		time.sleep(2)
+		os.system('clear')
+		menu()
 	
 # Menus ------------------------------------------------------------
 
@@ -424,12 +461,13 @@ def menu():
  \__,_|_|   \_/\_/ |_|  |_|\___/|_| |_|
 	''', 'cyan'))
 		print(colored("		By Cañas" ,'yellow'))
-		print(colored("			Version - 1", 'yellow'))
+		print(colored("			Version - 1.2", 'yellow'))
 		print(colored('''------------------------------------------''', 'blue'))
 		print(colored("[1]", 'yellow'), "Opciones de encendido")
 		print(colored("[2]", 'yellow'), "Configurar tráfico")
 		print(colored("[3]", 'yellow'), "Configurar restricciones")
 		print(colored("[4]", 'yellow'), "Verificar status de configuraciones")
+		print(colored("[5]", 'yellow'), "Borrar una configuración")
 		print(colored('''--------------------''', 'yellow'))
 		print(colored("[c]", 'magenta'), "Limpiar consola")
 		print(colored("[0]", 'magenta'), "Salir")
@@ -446,9 +484,11 @@ def menu():
 		elif opcion == "4":
 			os.system('ufw status')
 			print(colored('''------------------------------------------''', 'blue'))
-			input("Presione enter para regresar: ")
+			input("Presione enter para regresar:  ")
 			os.system('clear')
 			menu()
+		elif opcion == "5":
+			deleteConf()
 		elif opcion == "c":
 			os.system('clear')
 		elif opcion == "0":
