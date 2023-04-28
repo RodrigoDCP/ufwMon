@@ -36,3 +36,9 @@ In summary, these menus provide a user-friendly interface for configuring and ma
 An additional section has been added that allows for the removal or withdrawal of configurations and restrictions. This section has been implemented with the intention of enabling the elimination of erroneous configurations or accidental actions that may have been made previously.
 
 With this improvement, it is now possible to undo any configuration or restriction that may be causing issues or unnecessary limitations in the system. This will make it easier to correct errors and optimize the system for better performance.
+
+# Upgrade
+
+Various sections of the console user interface have been improved.
+
+Additionally, an issue has been fixed where selecting "Block incoming traffic" previously allowed traffic instead of blocking it. Now, the feature correctly blocks incoming traffic.
