@@ -1,5 +1,5 @@
 # ufwMon
-![Texto alternativo de la imagen](IMG/menu1.PNG)
+![Texto alternativo de la imagen](IMG/V1.2/menu2.PNG)
 
 ufwMon is a complementary tool for the ufw firewall aimed at simplifying its configuration and making it more accessible for users with basic knowledge of Linux.
 
