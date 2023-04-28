@@ -40,7 +40,7 @@ def status_ufw():
 	print(colored("------------------------------------------", "blue"))
 	os.system('systemctl status ufw')
 	print(colored("------------------------------------------", "blue"))
-	input(colored("Presione enter para continuar", 'green'))
+	input(colored("Presione enter para continuar: ", 'green'))
 	os.system('clear')
 	On_Off()
 	
@@ -138,7 +138,7 @@ def Bloquear_entrada():
 		print(colored("Bloqueando trafico...", 'yellow'))
 		time.sleep(1)
 		print(colored('''------------------------------------------''', 'blue'))
-		os.system('ufw default allow incoming')
+		os.system('ufw default deny incoming')
 		time.sleep(1)
 		os.system('clear')
 		trafico()		
@@ -311,8 +311,10 @@ def deleteConf():
 		os.system('ufw delete ' + numero)
 		time.sleep(2)
 		print(colored('''------------------------------------------''', 'blue'))
-		input("Presione enter para regresar: ")
+		input(colored("Presione enter para regresar: ", 'green'))
+		os.system('clear')
 		menu()
+		
 	elif opcion == "no":
 		print(colored("Cancelando acción...", 'yellow'))
 		time.sleep(1)
@@ -484,7 +486,7 @@ def menu():
 		elif opcion == "4":
 			os.system('ufw status')
 			print(colored('''------------------------------------------''', 'blue'))
-			input("Presione enter para regresar:  ")
+			input(colored("Presione enter para regresar:  ", 'green'))
 			os.system('clear')
 			menu()
 		elif opcion == "5":
